@@ -43,6 +43,7 @@ class App extends Component {
       axios
         .post("http://localhost:8000/upload", data, {
           onUploadProgress: ProgressEvent => {
+            console.log(ProgressEvent);
             this.setState({
               loaded: (ProgressEvent.loaded / ProgressEvent.total) * 100
             });
@@ -51,8 +52,7 @@ class App extends Component {
         .then(res => {
           console.log(res.statusText);
           this.setState({
-            selectedFile: null,
-            loaded: 0
+            selectedFile: null
           });
         });
     } else {
