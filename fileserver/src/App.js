@@ -13,9 +13,9 @@ class App extends Component {
   }
 
   componentDidMount = async () => {
-    console.log("componentDidMount");
-    const resp = await axios.get("localhost:8000");
-    console.log(resp);
+    // console.log("componentDidMount");
+    // const resp = await axios.get("https://sleepy-bayou-95016.herokuapp.com/");
+    // console.log(resp);
   };
 
   onChangeHandler = e => {
@@ -41,7 +41,7 @@ class App extends Component {
       const data = new FormData();
       data.append("file", this.state.selectedFile);
       axios
-        .post("http://localhost:8000/upload", data, {
+        .post("https://sleepy-bayou-95016.herokuapp.com/upload", data, {
           onUploadProgress: ProgressEvent => {
             console.log(ProgressEvent);
             this.setState({

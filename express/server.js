@@ -20,6 +20,10 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage }).array("file");
 
 app.get("/", function(req, res) {
+  return res.send("We're up and running");
+});
+
+app.get("/data", function(req, res) {
   const data = path.join(__dirname, "public");
   fs.readdir(data, function(err, files) {
     if (err) {
