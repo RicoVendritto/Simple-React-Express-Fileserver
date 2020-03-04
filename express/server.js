@@ -25,7 +25,7 @@ app.get("/", function(req, res) {
       return console.log("Unable to scan directory: " + err);
     }
     files.forEach(function(file) {
-      return res.send(file);
+      return res.json(file);
     });
   });
 });

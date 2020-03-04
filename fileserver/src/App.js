@@ -12,6 +12,12 @@ class App extends Component {
     };
   }
 
+  componentDidMount = async () => {
+    console.log("componentDidMount");
+    const resp = await axios.get("localhost:8000");
+    console.log(resp);
+  };
+
   onChangeHandler = e => {
     console.log("onChangeHandler");
     if (
@@ -133,6 +139,7 @@ class App extends Component {
               >
                 Upload
               </button>
+              <div>uploaded files</div>
             </div>
           </div>
         </div>
