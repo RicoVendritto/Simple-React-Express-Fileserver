@@ -1,5 +1,5 @@
 const express = require("express");
-const PORT = process.env.port || 8000;
+const PORT = process.env.PORT || 8000;
 const app = express();
 const multer = require("multer");
 const cors = require("cors");
