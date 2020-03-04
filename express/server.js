@@ -20,18 +20,21 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage }).array("file");
 
 app.get("/", function(req, res) {
-  return res.send("We're up and running");
+  return res.json({ message: "We're up and running" });
 });
 
 app.get("/data", function(req, res) {
   const data = path.join(__dirname, "public");
+  const object = {};
   fs.readdir(data, function(err, files) {
     if (err) {
       return console.log("Unable to scan directory: " + err);
+    } else {
+      files.forEach(function(file) {
+        object[file] = file;
+      });
+      return res.json(object);
     }
-    files.forEach(function(file) {
-      return res.json(file);
-    });
   });
 });
 
