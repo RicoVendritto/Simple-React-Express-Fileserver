@@ -1,6 +1,9 @@
 {
   "name": "express",
   "version": "0.1.0",
+  "engines": {
+    "node": "13.2.0"
+  },
   "main": "index.js",
   "private": true,
   "dependencies": {
@@ -15,9 +18,6 @@
     "react-strap": "0.0.1",
     "react-toastify": "^4.4.2",
     "reactstrap": "^6.5.0"
-  },
-  "engines": {
-    "node": "13.x"
   },
   "scripts": {
     "start": "nodemon server.js",
