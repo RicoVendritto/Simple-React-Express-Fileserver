@@ -1,4 +1,5 @@
 const express = require("express");
+const PORT = process.env.port || 8000;
 const app = express();
 const multer = require("multer");
 const cors = require("cors");
@@ -42,5 +43,5 @@ app.post("/upload", function(req, res) {
 });
 
 app.listen(8000, function() {
-  console.log("App running on port 8000");
+  console.log(`App running on port ${PORT}`);
 });
