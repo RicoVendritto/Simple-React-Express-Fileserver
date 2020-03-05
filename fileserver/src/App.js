@@ -41,7 +41,7 @@ class App extends Component {
       const data = new FormData();
       data.append("file", this.state.selectedFile);
       axios
-        .post("https://sleepy-bayou-95016.herokuapp.com/upload", data, {
+        .post("http://localhost:8000/upload", data, {
           onUploadProgress: ProgressEvent => {
             console.log(ProgressEvent);
             this.setState({
